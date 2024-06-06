@@ -20,7 +20,6 @@ const LoginPage = () => {
                             <Typography className='description' component="p">Login to your account</Typography>
                         </>
                        <Box className="login-input">
-                        <
                        </Box>
                     </Box>
 
