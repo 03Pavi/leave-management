@@ -1,0 +1,58 @@
+.input-field-wrapper {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.input-field-wrapper .input-field {
+    width: 350px;
+}
+
+/* target 3 input feild  */
+
+.input-field-wrapper .input-field {
+    width: 350px;
+}
+
+#alert-dialog-cancel-button {
+    font-weight: 600;
+    color: #424242;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0.07px;
+    text-transform: uppercase;
+    padding: 0px;
+}
+
+.modal-modal-description {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--black);
+}
+
+.modal-footer {
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 24px;
+}
+
+#alert-dialog-confirm-button {
+    font-weight: 600;
+    color: #01579b;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0.07px;
+    text-transform: uppercase;
+    padding: 0px;
+}

@@ -1,0 +1,18 @@
+.logout-button {
+    border: none;
+    display: flex;
+    gap: 8px;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    padding: 8px 16px;
+    background-color: transparent;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: #818181;
+    width: 100%;
+  
+    &:first-child {
+      gap: 8px;
+    }
+  }
+  

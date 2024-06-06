@@ -1,0 +1,5 @@
+.active-list-item {
+    background-color: var(--link) !important;
+    color: var(--blue) !important;
+    font-size: 14px !important;
+}

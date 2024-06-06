@@ -1,0 +1,20 @@
+.login-page-wrapper {
+    display: flex;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100vh;
+    background-color: #F3F6F9;
+}
+
+.left {
+    width: 70%;
+    height: 100vh;
+}
+.navigate-link{
+    
+}
