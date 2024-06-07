@@ -1,10 +1,15 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
+import Image from 'next/image'
 import { Authenticate } from '@/assets/images'
 import { Box, Button, Divider, TextField, Typography } from '@mui/material'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { styled } from '@mui/material/styles';
+import { useAppDispatch } from '@/store/hooks'
+import { GetUSerDetails } from "@/features/user/user.actions"
+import { RequestStatus } from '@/lib/enum'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import "./styles.css"
 const Root = styled('div')(({ theme }) => ({
     marginTop: "20px",
@@ -16,12 +21,40 @@ const Root = styled('div')(({ theme }) => ({
     },
 }));
 const LoginPage = () => {
+    const dispatch = useAppDispatch()
+    const [userDetails, setUserDetails] = useState({
+        email: "",
+        password: ""
+    })
     const router = useRouter()
-    const handleLogin = () => {
-        router.push("/welcome")
+    const handleLogin = async () => {
+        if (!userDetails.email || !userDetails.password) {
+            toast.error('Please fill all the fields', {
+                position: "top-right",
+                autoClose: 5000,
+                theme: "light",
+            });
+            return;
+        }
+        else {
+            const response = await dispatch(GetUSerDetails(userDetails))
+            if (response.meta.requestStatus === RequestStatus.FULFILLED) {
+                console.log(response.payload)
+            } else if (response.meta.requestStatus === RequestStatus.REJECTED) {
+                toast.error(response.payload, {
+                    position: "top-right",
+                    autoClose: 5000,
+                    theme: "light",
+                });
+            }
+
+        }
+        // router.push("/welcome")
     }
+
     return (
         <Box className="login-page-wrapper">
+            <ToastContainer />
             <Box className="right">
                 <Image src={Authenticate} alt='' width={500} className='login-image' />
             </Box>
@@ -37,10 +70,11 @@ const LoginPage = () => {
                         </>
                         <Box className="login-input">
                             <Box mb={2} className="login-input-field">
-                                <Typography component="p">UserName / Email</Typography>
+                                <Typography component="p">Email</Typography>
                                 <TextField
                                     className='text-field'
                                     variant="outlined"
+                                    onChange={(e) => { setUserDetails({ ...userDetails, email: e.target.value }) }}
                                     fullWidth
                                 />
                             </Box>
@@ -49,6 +83,7 @@ const LoginPage = () => {
                                 <TextField
                                     className='text-field'
                                     variant="outlined"
+                                    onChange={(e) => { setUserDetails({ ...userDetails, password: e.target.value }) }}
                                     fullWidth
                                 />
                             </Box>

@@ -22,8 +22,8 @@ export default function BasicSelect({ menuLabel, menuList, minwidth }: Iprops) {
     };
 
     return (
-        <Box minWidth={minwidth}>
-            <FormControl className="select-menu-wrapper" size='small' fullWidth>
+        <Box sx={{ borderRadius: "100px" }} minWidth={minwidth}>
+            <FormControl className="select-menu-wrapper"  size='small' fullWidth>
                 <InputLabel id="demo-simple-select-label">{menuLabel}</InputLabel>
                 <Select
                     labelId="demo-simple-select-label"

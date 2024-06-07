@@ -1,0 +1,30 @@
+.toolbox-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.toolbox-items-list {
+    width: 172;
+    display: flex;
+    gap: 20px;
+}
+
+.leave-detail {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leave-detail p {
+    width: 100%;
+    display: flex;
+    color: var(--black);
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+}

@@ -1,4 +1,4 @@
-.toolbox-wrapper{
+.toolbox-list{
     display: flex;
     justify-content: space-around;
 }

@@ -64,9 +64,7 @@ export default function StickyHeadTable({ searchValue }: IProps) {
     return (
         <Paper sx={{ width: '100%', overflow: 'hidden' }} elevation={0}>
             <TableContainer sx={{
-                maxHeight: 440,
-                borderRight: "1px solid  #E0E0E0",
-                borderLeft: "1px solid  #E0E0E0"
+                maxHeight: 600,
             }}>
                 <Table stickyHeader aria-label="sticky table"
                     sx={{
@@ -102,7 +100,7 @@ export default function StickyHeadTable({ searchValue }: IProps) {
                                                             {value===null?"---":value}
                                                         </TableCell> :
                                                         <TableCell key={column.id} align={column.align}>
-                                                            <Box className="toolbox-wrapper">
+                                                            <Box className="toolbox-list">
                                                                 <Box className="toolbox"><ModeEditOutlineOutlinedIcon /></Box>
                                                                 <Box className="toolbox"><DeleteOutlineSharpIcon /></Box>
                                                                 <Box className="toolbox"><MoreVertIcon /></Box>

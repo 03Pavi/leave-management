@@ -1,6 +1,7 @@
 import React from 'react'
 import Dashboard from "@/layout/Layout"
 import { Metadata } from 'next';
+import Role from '@/screens/roles-page';
 export const metadata: Metadata = {
     title: 'Roles',
     icons: {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 const page = () => {
     return (
         <Dashboard>
-            role
+            <Role />
         </Dashboard>
     )
 }
